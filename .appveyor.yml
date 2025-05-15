@@ -11,7 +11,7 @@ init:
 build_script:
   - set PLATFORM=%PLATFORM%
   - pip install -r requirements.txt
-  - pyinstaller --onefile --noconsole --name ExcelSplitter-%PLATFORM% excel-splitter.py
+  - python -m pyinstaller --onefile --noconsole --name ExcelSplitter-%PLATFORM% excel-splitter.py
 
 artifacts:
   - path: dist\*.exe
