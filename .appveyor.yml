@@ -1,11 +1,18 @@
 image: Visual Studio 2019
 
+environment:
+  matrix:
+    - PLATFORM: x86
+    - PLATFORM: x64
+
 init:
   - cmd: python -m pip install --upgrade pip setuptools wheel
 
 build_script:
+  - set PLATFORM=%PLATFORM%
   - pip install -r requirements.txt
-  - pyinstaller --onefile --noconsole --name splitter excel-splitter.py
+  - pyinstaller --onefile --noconsole --name ExcelSplitter-%PLATFORM% excel-splitter.py
 
 artifacts:
-  - path: dist\ExcelFilterApp.exe
+  - path: dist\*.exe
+    name: ExcelSplitter
