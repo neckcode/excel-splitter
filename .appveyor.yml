@@ -5,7 +5,7 @@ init:
 
 build_script:
   - pip install -r requirements.txt
-  - pyinstaller --onefile --noconsole --name ExcelFilterApp main.py
+  - pyinstaller --onefile --noconsole --name splitter excel-splitter.py
 
 artifacts:
   - path: dist\ExcelFilterApp.exe
