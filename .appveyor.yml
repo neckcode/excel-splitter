@@ -1,9 +1,11 @@
 image: Visual Studio 2019
 
+init:
+  - cmd: python -m pip install --upgrade pip setuptools wheel
+
 build_script:
   - pip install -r requirements.txt
-  - pyinstaller --onefile --noconsole --name excel-splitter excel-splietter.py
+  - pyinstaller --onefile --noconsole --name ExcelFilterApp main.py
 
 artifacts:
-  - path: dist\ExcelSplitter.exe
-    name: ExcelSplitter
+  - path: dist\ExcelFilterApp.exe
