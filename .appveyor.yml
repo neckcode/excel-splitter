@@ -1,0 +1,9 @@
+image: Visual Studio 2019
+
+build_script:
+  - pip install -r requirements.txt
+  - pyinstaller --onefile --noconsole --name excel-splitter excel-splietter.py
+
+artifacts:
+  - path: dist\ExcelSplitter.exe
+    name: ExcelSplitter
