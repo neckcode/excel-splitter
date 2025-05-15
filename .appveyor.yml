@@ -13,10 +13,10 @@ install:
   - '%PYTHON%\python.exe -m pip install --upgrade pip setuptools wheel'
   - '%PYTHON%\python.exe -m pip install --force-reinstall pyinstaller'
   - '%PYTHON%\python.exe -m pip show pyinstaller'
-  - '%PYTHON%\python.exe -m pyinstaller --version'
+  - pyinstaller --version
 
 build_script:
-  - '%PYTHON%\python.exe -m pyinstaller --onefile --noconsole --name ExcelSplitter-%PLATFORM% excel-splitter.py'
+  - pyinstaller --onefile --noconsole --name ExcelSplitter-%PLATFORM% excel-splitter.py
 
 artifacts:
   - path: dist\*.exe
